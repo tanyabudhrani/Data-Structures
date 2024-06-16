@@ -1,7 +1,5 @@
 # arrays and stacks
 
-Created time: September 12, 2023 6:49 PM
-
 # searching
 
 - T(n): number of guesses in a range of n numbers
@@ -46,25 +44,17 @@ int binarysearch(int[] a, int key) {
 
 ### demonstration of binary search
 
-![Screenshot 2023-09-13 at 9.56.08 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_9.56.08_AM.png)
-
 | low | high | mid | a[mid] |
 | --- | --- | --- | --- |
 | 0 | 31 | 15 | 25 |
-
-![Screenshot 2023-09-13 at 9.56.55 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_9.56.55_AM.png)
 
 | low | high | mid | a[mid] |
 | --- | --- | --- | --- |
 | 16 | 31 | 23 | 33 |
 
-![Screenshot 2023-09-13 at 9.57.43 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_9.57.43_AM.png)
-
 | low | high | mid | a[mid] |
 | --- | --- | --- | --- |
 | 16 | 22 | 19 | 29 |
-
-![Screenshot 2023-09-13 at 9.59.06 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_9.59.06_AM.png)
 
 | low | high | mid | a[mid] |
 | --- | --- | --- | --- |
@@ -170,24 +160,9 @@ int binarysearch(int[] a, int key) {
 
 - to insert into an unsorted array, simply put it at the end
 - to insert into a sorted array, we need to find the correct location for the new element which is exactly insertion sort
-
-![Screenshot 2023-09-13 at 10.13.23 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_10.13.23_AM.png)
-
-![Screenshot 2023-09-13 at 10.13.46 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_10.13.46_AM.png)
-
 - if we were to delete a value, for the unsorted array, we can simply move the values on the right to that empty slot, however, for the sorted array, we need to move all values on the right one space to the left
     - for unsorted: we use linear search, then move the last element to the empty slot → O(n)
     - for sorted: we use binary search, then we move all the elements to the left → O(n)*O(log(n)) = O(n)
-
- 
-
-![Screenshot 2023-09-13 at 10.16.11 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_10.16.11_AM.png)
-
-![Screenshot 2023-09-13 at 10.16.23 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_10.16.23_AM.png)
-
-![Screenshot 2023-09-13 at 10.16.42 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_10.16.42_AM.png)
-
-![Screenshot 2023-09-13 at 10.17.03 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_10.17.03_AM.png)
 
 ### references
 
@@ -198,19 +173,11 @@ int binarysearch(int[] a, int key) {
 - the difference between `int count` and `int[] students`:
     - **objects** and **variables of primitive types** are declared differently
     
-    ![Screenshot 2023-09-13 at 10.21.36 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_10.21.36_AM.png)
-    
     - **int count**— the name ‘count’ is associated with the address of the four bytes allocated on the stack
     - **int[] students**— the name ‘students’ is associated with the address of the eight bytes allowed on the stack
 - we need to call a constructor (a special method) to create an object using the keyword `new`
     
-    ![Screenshot 2023-09-13 at 10.23.07 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_10.23.07_AM.png)
-    
     - the meaning of assignment is different for objects than it is for primitive data types
-
-![Screenshot 2023-09-13 at 10.24.47 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_10.24.47_AM.png)
-
-![Screenshot 2023-09-13 at 10.25.01 AM.png](arrays%20and%20stacks%202c24e5e1707f4cad87c10c1ad41abcd6/Screenshot_2023-09-13_at_10.25.01_AM.png)
 
 - after `int[] a = new int[10]` which is wrong?
     
@@ -326,20 +293,7 @@ int binarysearch(int[] a, int key) {
 ## specification of the stack
 
 - a stack’s state is modeled as a sequence of elements, initially empty
-    
-    
-    | push(hung hom) | adding hung hom to the stop of the stack which returns nothing |
-    | --- | --- |
-    | push(mong kok)
-    push(kowloon tong)
-    push(tai wai) | tai wai 
-    kowloon tong
-    mong kok
-    hung hom |
-    | pop() | removes the last element on the top of the stack and returns it 
-    
-    returns tai wai  |
-
+ 
 - a `push(x)` operation appends x to the end of the sequence
 
 - a `pop()` operation deletes the last element of the sequence and returns the element deleted
