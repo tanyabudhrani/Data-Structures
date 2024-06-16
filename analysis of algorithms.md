@@ -128,23 +128,12 @@ boolean sorted(int[] a) {
     - comparing the two, $n^2/102$4 grows faster as a quadratic equation will encapsulate nlogn
         - they will cross at about 30,000,000
 
-![Screenshot 2023-09-07 at 9.02.33 AM.png](analysis%20of%20algorithms%20df0f6a42a10f40a4a02d116f7232496d/Screenshot_2023-09-07_at_9.02.33_AM.png)
-
-![different-types-of-parent-functions-1024x564.png](analysis%20of%20algorithms%20df0f6a42a10f40a4a02d116f7232496d/different-types-of-parent-functions-1024x564.png)
-
 # big-oh notation
-
-![Screenshot 2023-08-31 at 10.27.21 AM.png](analysis%20of%20algorithms%20df0f6a42a10f40a4a02d116f7232496d/Screenshot_2023-08-31_at_10.27.21_AM.png)
-
 - **asymptotic upper bound**: helps describe the growth rate of a function as the input size approaches infinity
     - $1024nlogn$ grows in the order of $nlogn$
     - $n^2/1024$ grows in the order of **$n^2$**
     - $7n-1$ grows in the order of $n$
 - mathematically, there exists constants ‘C’ and ‘k’ such that for all ‘n ≥ k’, ‘f(n) ≤ C*g(n)’— in summary, f(n) can bound T(n) if and only if T(n) is less than or equal to some constant multiplied by f(n) for all n, meaning that we need to choose a C such that T(n) is always bounded by f(n)
-
-![Screenshot 2023-09-06 at 11.26.41 AM.png](analysis%20of%20algorithms%20df0f6a42a10f40a4a02d116f7232496d/Screenshot_2023-09-06_at_11.26.41_AM.png)
-
-![Screenshot 2023-09-06 at 11.28.47 AM.png](analysis%20of%20algorithms%20df0f6a42a10f40a4a02d116f7232496d/Screenshot_2023-09-06_at_11.28.47_AM.png)
 
 - we ignore multiplicative constants
     - ex: 73 = O(1), 3n = O(n)
@@ -195,22 +184,15 @@ boolean sorted(int[] a) {
 
 # big omega
 
-![Screenshot 2023-08-31 at 10.52.55 AM.png](analysis%20of%20algorithms%20df0f6a42a10f40a4a02d116f7232496d/Screenshot_2023-08-31_at_10.52.55_AM.png)
-
 - **asymptotic lower bound**: describes the lower limit of a growth rate, often represented by big omega (best case)
 - mathematically, there exists constants ‘C’ and ‘k’ such that for all ‘n≥k’, ‘f(n) ≥ C*g(n)’
 
 - linear search takes $Ω(n)$ time, selection sort takes $Ω(n^2)$ time, and bubble sort takes $Ω(n^2)$ time in the worst cases
 
-![download.gif](analysis%20of%20algorithms%20df0f6a42a10f40a4a02d116f7232496d/download.gif)
-
 > f(n) = Ω(g(n)) if g(n) = O(f(n)) — this states that, if f(n) grows as fast as g(n) then g(n) can be bounded by f(n)
 > 
 
 # big theta
-
-![Screenshot 2023-08-31 at 11.08.10 AM.png](analysis%20of%20algorithms%20df0f6a42a10f40a4a02d116f7232496d/Screenshot_2023-08-31_at_11.08.10_AM.png)
-
 - **asymptotic tight bound**: describes both upper and lower bound on the growth rate of a function to capture the exact rate without over or underestimating
 - mathematically, there exists positive constants ‘C1’, ‘C2’, and ‘k’ such that for all ‘n >= k, C1 * g(n) <= f(n) <= C2 * g(n)’
 
@@ -241,8 +223,6 @@ boolean sorted(int[] a) {
         - since only upper bound is true, theta will be false
     - $log(n!) = Ω(nlogn)$
         - according to the definition of big-omega, nlogn grows much slower than log(n!)— so this is true
-
-[—](analysis%20of%20algorithms%20df0f6a42a10f40a4a02d116f7232496d/%E2%80%94%20e59842b957b747dba5f4834fa3a95eba.csv)
 
 ## code snippets for each complexity
 
