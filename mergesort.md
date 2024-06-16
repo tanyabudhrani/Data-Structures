@@ -1,23 +1,6 @@
 # mergesort
 
-Created time: October 14, 2023 7:42 AM
-
 # merge
-
-- one of the first of the two arrays is the smallest
-
-![Screenshot 2023-10-14 at 10.52.15 PM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-14_at_10.52.15_PM.png)
-
-![Screenshot 2023-10-14 at 10.52.52 PM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-14_at_10.52.52_PM.png)
-
-![Screenshot 2023-10-14 at 10.52.29 PM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-14_at_10.52.29_PM.png)
-
-![Screenshot 2023-10-14 at 10.53.06 PM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-14_at_10.53.06_PM.png)
-
-- after one of the arrays is exhausted, copy all the leftovers of the other
-
-![Screenshot 2023-10-14 at 10.54.33 PM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-14_at_10.54.33_PM.png)
-
 ```java
 public class MergeArray {	
 	static void MA(int[] a1, int[] a2, int[] a) {
@@ -50,9 +33,6 @@ public class MergeArray {
 ```
 
 - instead of two input arrays, the two parts are in the same array
-    
-    ![Screenshot 2023-10-14 at 10.58.05 PM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-14_at_10.58.05_PM.png)
-    
 
 ## merging two parts
 
@@ -80,10 +60,6 @@ void mergeV1(int [] a, int low, int mid, int high) {
 	}
 }
 ```
-
-# mergesort
-
-![Screenshot 2023-10-15 at 12.55.26 AM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-15_at_12.55.26_AM.png)
 
 ## recursive mergesort
 
@@ -138,8 +114,6 @@ public class RecursiveMS {
 }
 ```
 
-![Screenshot 2023-10-15 at 1.06.41 AM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-15_at_1.06.41_AM.png)
-
 - the running time of merge sort is O(n*log(n))
 
 ### question
@@ -164,17 +138,11 @@ public class RecursiveMS {
     - sort every quadruple by merging two pairs
     - sort a by merging two parts
 
-![Screenshot 2023-10-15 at 1.06.41 AM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-15_at_1.06.41_AM%201.png)
-
 - at j = 1, 2,…log(n), there are $n/2^j$ subproblems, each of size $2^j$
 
 ### process
-
-![Screenshot 2023-10-15 at 1.07.34 AM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-15_at_1.07.34_AM.png)
-
-- for a general n, there exists k such that $2^k ≤ n < 2^k$$^+$$^1$
-    - the work of sorting n elements is between sorting $2^k$ elements ($O(2^klog2^k)$) and sorting $2^k$$^+$$^1$ elements ($O(2^k$$^+$$^1log2^k$$^+$$^1$)
-- ($O(2^klog2^k)$) = ($O(2^k$$^+$$^1log2^k$$^+$$^1$) = $O(nlogn)$
+- for a general $n$, there exists $k$ such that $2^k \leq n < 2^{k+1}$
+  - the work of sorting $n$ elements is between sorting $2^k$ 
 
 | n | logn | nlogn | $n^2$ |
 | --- | --- | --- | --- |
@@ -186,10 +154,6 @@ public class RecursiveMS {
 | 64 | 6 | 384 | 4096 |
 | 128 | 7 | 896 | 16384 |
 | 256 | 8 | 2048 | 65536 |
-
-### a better way
-
-![Screenshot 2023-10-15 at 1.13.05 AM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-15_at_1.13.05_AM.png)
 
 ## standard mergesort
 
@@ -232,16 +196,7 @@ void mergesort(int []a, int low , int high) {
 
 # stability of sorting algorithms
 
-- the relative order of two equal items (having the same key) will be preserved
-
-![Screenshot 2023-10-15 at 1.22.35 AM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-15_at_1.22.35_AM.png)
-
-### exercise
-
-- are sorting algorithms always stable?
-    
-    ![Screenshot 2023-10-15 at 1.23.11 AM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-15_at_1.23.11_AM.png)
-    
+- the relative order of two equal items (having the same key) will be preserved    
 
 ## why do we need stability?
 
@@ -250,20 +205,16 @@ void mergesort(int []a, int low , int high) {
     - when sorting them by priority, we want first come, first serve
     - if an instable sorting algorithm is used, we mess up the data
 
-| bubble sort | stable | each time an element is moved by one position
-
-it never swaps two elements of the same value |
+| algorithm | stability | notes |
 | --- | --- | --- |
+| bubble sort | stable | each time an element is moved by one position <br> it never swaps two elements of the same value |
 | insertion sort | stable | we only move elements larger than the current |
 | selection sort | not stable |  |
-| merge sort | stable | elements in the same part never change order
+| merge sort | stable | elements in the same part never change order <br> two elements change order only when they are merged from two different parts into one part |
 
-two elements change order only when they are merged from two different parts into one part |
+- of two equal elements, the one from `temp` takes precedence— `temp` is a copy of the left part
+    - not stable if $\leq$ is replaced by $<$
 
-![Screenshot 2023-10-15 at 1.31.24 AM.png](mergesort%2086440b1b6a584e7d80251c01161da28d/Screenshot_2023-10-15_at_1.31.24_AM.png)
-
-- of two equal elements, the one from temp takes precedence— temp is a copy of the left part
-    - not stable if ≤ is replaced by <!
 
 ## algorithm concepts
 
