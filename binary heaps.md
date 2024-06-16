@@ -1,7 +1,5 @@
 # binary heaps
 
-Created time: November 4, 2023 2:02 AM
-
 ### review of binary trees
 
 | trees | basic concepts  |
@@ -15,38 +13,19 @@ Created time: November 4, 2023 2:02 AM
 
 ## balanced trees
 
-![Screenshot 2023-11-04 at 5.08.07 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-04_at_5.08.07_PM.png)
-
 - a binary tree is balanced if for any two leaves the difference of the depth is at most 1
 
 - the absolute difference of heights of left and right subtrees at any node is less than 1
 
 ## balance factor
-
-![Screenshot 2023-11-04 at 5.16.33 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-04_at_5.16.33_PM.png)
-
 - each node has a balance factor of **{-1, 0, 1}**: height of the right subtree - height of the left subtree
 - it is impossible for the BF of all non-leaf nodes to be 1 because this means that for every node in the tree, the height of the right subtree is one more than the height of the right subtree but for the n-2 level to have a BF of 1, then the n-1 level needs to have one more right sub-child which will, in turn, make the BF of the root = 2 which violates the AVL property
 
 - example: removing 5
-    
-    ![Screenshot 2023-11-04 at 5.30.56 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-04_at_5.30.56_PM.png)
-    
     - this violates the AVL tree property, so we need to rearrange the shape using rotations
-        
-        ![Screenshot 2023-11-04 at 5.36.56 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-04_at_5.36.56_PM.png)
         
         - right child takes over parent, then parent becomes the left subtree & parent to its original child (which is now its left subtree) and the left subtree of the new parent
         
-- example: adding 79
-    
-    ![Screenshot 2023-11-04 at 5.55.41 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-04_at_5.55.41_PM.png)
-    
-    - this again violates the property of AVL
-    
-    ![IMG_7075.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/IMG_7075.png)
-    
-
 ## rotations
 
 | if there is an imbalance in the left child's right sub-tree | perform a left-right rotation |
@@ -54,14 +33,6 @@ Created time: November 4, 2023 2:02 AM
 | if there is an imbalance in the left child's left sub-tree | perform a right rotation |
 | if there is an imbalance in the right child's right sub-tree | perform a left rotation |
 | if there is an imbalance in the right child's left sub-tree | perform a right-left rotation |
-
-### left rotation
-
-![Screenshot 2023-11-05 at 10.16.41 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_10.16.41_PM.png)
-
-### right rotation
-
-![Screenshot 2023-11-05 at 10.16.54 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_10.16.54_PM.png)
 
 ## red-black
 
@@ -71,14 +42,8 @@ Created time: November 4, 2023 2:02 AM
     - every path from a node to a leaf contains the same number of black nodes
 - a chain of 3 nodes is not possible
     
-    ![Screenshot 2023-11-04 at 6.15.59 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-04_at_6.15.59_PM.png)
-    
 - the depth of a leaf node is between 0 and n-1
     - its depth is equal to the number of edges in the path from the root to that leaf
-
-![Screenshot 2023-11-04 at 6.19.23 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-04_at_6.19.23_PM.png)
-
-![Screenshot 2023-11-04 at 6.19.39 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-04_at_6.19.39_PM.png)
 
 ### comparison
 
@@ -98,43 +63,7 @@ Created time: November 4, 2023 2:02 AM
 
 - to find the minimum key of a max heap, we would need **O(log (n))** time since min is one of the leaves
 
-### two heaps on the same set of elements
-
-![Screenshot 2023-11-05 at 3.57.00 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_3.57.00_PM.png)
-
-## insertion into a heap
-
-![Screenshot 2023-11-05 at 3.57.56 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_3.57.56_PM.png)
-
-![Screenshot 2023-11-05 at 3.58.28 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_3.58.28_PM.png)
-
-![Screenshot 2023-11-05 at 3.58.48 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_3.58.48_PM.png)
-
-![Screenshot 2023-11-05 at 4.00.00 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.00.00_PM.png)
-
-![Screenshot 2023-11-05 at 4.00.31 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.00.31_PM.png)
-
-![Screenshot 2023-11-05 at 4.00.44 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.00.44_PM.png)
-
 - after swapping 63 with its parent node 25, we no longer need to compare it with its sibling since, if it does swap with 36, it can be greater than OR equal to its children
-- exercise
-    
-    ![Screenshot 2023-11-05 at 4.02.40 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.02.40_PM.png)
-    
-    ![IMG_7080.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/IMG_7080.png)
-    
-
-## deletion
-
-![Screenshot 2023-11-05 at 4.07.10 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.07.10_PM.png)
-
-![Screenshot 2023-11-05 at 4.07.20 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.07.20_PM.png)
-
-![Screenshot 2023-11-05 at 4.08.50 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.08.50_PM.png)
-
-![Screenshot 2023-11-05 at 4.07.51 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.07.51_PM.png)
-
-![Screenshot 2023-11-05 at 4.08.11 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.08.11_PM.png)
 
 ## modifying a heap
 
@@ -145,40 +74,17 @@ bubble x up the tree until it finds the correct place— if the key of x is larg
 | removeMax()  | remove the rightmost node y on the bottom level, and put it in the root
 
 bubble down the new root’s y until it finds the correct place— if the key of y is smaller than at least one child’s key, swap y with the largest child’s key and continue |
-- both insertion and deletion can be done in O(log n) time
-
-## one item changed
-
-![Screenshot 2023-11-05 at 4.16.54 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.16.54_PM.png)
-
-![Screenshot 2023-11-05 at 4.17.10 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.17.10_PM.png)
-
-![Screenshot 2023-11-05 at 4.17.27 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.17.27_PM.png)
-
-- exercise
-    
-    ![2.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/2.png)
-    
-    ![3.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/3.png)
-    
+- both insertion and deletion can be done in O(log n) time 
 
 # heapsort
 
 - the information we have: root and the children of each node
 - a **level-wise traversal** needs **O(n)** time
 - once we know the number of nodes, we can calculate the positions:
-    - $2^h ≤ n < 2^h$$^+$$^1$ ($h = ⌊logn⌋$)
-    - $n-2^h$ tells us which side to go → if $n-2^h <2^h$$^-$$^1$, go left
-    - leaves at the bottom: $2^h, 2^h+1$…
+	- $2^h \leq n < 2^{h+1}$ ($h = \lfloor \log n \rfloor$)
+	-  $n - 2^h$ tells us which side to go → if $n - 2^h < 2^{h-1}$, go left
+	- leaves at the bottom: $2^h, 2^h+1, \dots$
 
-![Screenshot 2023-11-05 at 4.25.20 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.25.20_PM.png)
-
-![Screenshot 2023-11-05 at 4.25.31 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.25.31_PM.png)
-
-- left and right children of node i are $2*i+1$ and $2*i+2$ respectively
-    - if 2*i+1 ≥ the number of elements in the heap, then node i has no child
-    - if 2*i+2 = the number of elements in the heap, then node i has only left child
-- for $0<k<n$, the parent of node k is ⌊k-1/2⌋
 
 > a heap can be stored without references
 > 
@@ -258,9 +164,6 @@ Node removeMax() {
 ```
 
 ## minimum heap
-
-![Screenshot 2023-11-05 at 4.47.30 PM.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/Screenshot_2023-11-05_at_4.47.30_PM.png)
-
 ```java
 public class MinHeapArray {
 	void swap(int i, int j) { //swapping values 
@@ -332,10 +235,6 @@ public class MinHeapArray {
         - 10, 9, 4, 8, 6, 3, 2, 7, 7, 5, 6, 1, 2, 1
         - 1, 1, 2, 2, 3, 4, 5, 6, 6, 7, 7, 8, 9, 10
         - 65, 85, 17, 85, 66, 71, 45, 38, 95, 48, 18, 68, 60, 96, 55 — NO (after 38, there’s no place to keep 95)
-        
-        ![IMG_7101.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/IMG_7101.png)
-        
-        ![IMG_7102.png](binary%20heaps%209a72e3285f01415fab41379b2d311c4e/IMG_7102.png)
         
 
 ## merging two heaps
