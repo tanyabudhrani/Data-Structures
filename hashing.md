@@ -1,7 +1,5 @@
 # hashing
 
-Created time: November 17, 2023 9:50 PM
-
 - removing duplicated elements from a sorted and unsorted array
     
     ```sql
@@ -134,8 +132,6 @@ boolean duplicateChar (String s) {
     1. when a visitor is detected, check whether its a returned user
     2. add a record (if new); update the existing record (otherwise) 
 
-![Screenshot 2023-11-18 at 2.19.40 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-18_at_2.19.40_PM.png)
-
 - each user has one IP address, and each IP address is used by one user — **neither is correct**
     - IP addresses may be shared in public wi-fi networks
     - dynamic IP addresses are when a set of IP addresses are chosen to be reused
@@ -167,12 +163,6 @@ boolean duplicateChar (String s) {
 - the only structure that allows O(1) time access to every element is an **array**
     - **random access of arrays**: the ith entry of array A can be accessed in O(1) time, by calculating the address of A[i], which is i steps away from the starting address of A (e.g. offset + size of bit)
 
-![Screenshot 2023-11-18 at 2.34.31 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-18_at_2.34.31_PM.png)
-
-![Screenshot 2023-11-18 at 2.34.42 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-18_at_2.34.42_PM.png)
-
-![Screenshot 2023-11-18 at 2.35.30 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-18_at_2.35.30_PM.png)
-
 - the notation h[1…N] → [0…M-1] represents a **hash function h** that maps values from the range [1…N] to the range [0…M-1]
     - **[1…N]** represents the the domain of the function which consists of integers from 1 to N
     - **[0…M-1]** represents the set of possible values the function can produce
@@ -185,8 +175,6 @@ boolean duplicateChar (String s) {
 - a key value is hashed to an array index by a **hash function** (e.g. `object.hashcode % buckets.length`)
 - hash table sizes should generally be **prime numbers**
 
-![Screenshot 2023-11-18 at 2.37.16 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-18_at_2.37.16_PM.png)
-
 - **M vs. n**
     
     
@@ -196,8 +184,6 @@ boolean duplicateChar (String s) {
     | M > n  | if the number of buckets is greater than the number of elements, it lessens the chance of collision but leads to the underutilization of memory  |
 - the hash function *h* is good if it does not assign too many elements to one slot
 
-![Screenshot 2023-11-19 at 10.21.56 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-19_at_10.21.56_PM.png)
-
 ### uniform hashing assumption
 
 - for a well-designed hash-function, each key is equally likely to hash to any integer between 0 and M-1
@@ -205,9 +191,6 @@ boolean duplicateChar (String s) {
 ## collision
 
 - $k_1 ≠ k_2$ but $h(k_1) = h(k_2)$
-    
-    ![Screenshot 2023-11-19 at 10.22.30 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-19_at_10.22.30_PM.png)
-    
 - N >> n and N >> M, but the relation between n and M have not been specified
     - the total number of keys (N) is significantly larger than the number of actual elements (n) and the number of buckets (M)
 - the **load factor** of a hash table measures how full the table is: **ʎ =** **n/M**
@@ -215,8 +198,6 @@ boolean duplicateChar (String s) {
 ## separate chaining
 
 - technique used in hash tables to handle situations where two or more keys hash to the same index (e.g. 57, 31, and 44) — in separate chaining, each bucket in the hash table contains a **linked list** that stores all the keys to that particular index
-
-![Screenshot 2023-11-18 at 2.42.42 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-18_at_2.42.42_PM.png)
 
 - with separate chaining, load factor is the **average length of each linked list**
     - to search for an element, we would need to traverse the entire list at the generated index
@@ -235,8 +216,6 @@ boolean duplicateChar (String s) {
     | 74%6 = 4 — currently, there are no elements at index 4 so we create a new linked list with a single element 74 |
     | 9%6 = 5 — currently, there are no elements at index 5 so we create a new linked list with a single element 9 |
     | 2%6 = 3 — inserting 2 at index 3 creates a collision since we already have 310 inserted — in this case, separate chaining inserts the new key at the beginning of the created list |
-
-![Screenshot 2023-11-19 at 10.40.16 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-19_at_10.40.16_PM.png)
 
 ```java
 import java.util.ArrayList;
@@ -304,15 +283,6 @@ public class SeprateChaining {
 ## open addressing
 
 - in open addressing, all the values are stored in the table itself, so, at any given point, size of the table must always be larger than the number of keys
-
-![Screenshot 2023-11-19 at 10.43.38 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-19_at_10.43.38_PM.png)
-
-![Screenshot 2023-11-19 at 10.43.55 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-19_at_10.43.55_PM.png)
-
-![Screenshot 2023-11-19 at 10.44.16 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-19_at_10.44.16_PM.png)
-
-![Screenshot 2023-11-19 at 10.44.21 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-19_at_10.44.21_PM.png)
-
 - all data is stored in the array, so load balance is less than or equal to 1 — but it’s better to **keep it below 0.5**, otherwise large clusters form and the performance degrades quickly
 
 ## linear probing
@@ -321,8 +291,6 @@ public class SeprateChaining {
     - **insert**: put a table index i if available, **otherwise, try i+1, i+2,…**
     - **search**: search table index i; if occupied but no match, try i+1, i+2,… until an unoccupied slot
 
-![Screenshot 2023-11-19 at 10.45.03 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-19_at_10.45.03_PM.png)
-
 > let **hash(x)** be the slot index computed using a hash function and **S** be the table size
 if slot hash(x) % S is full, then we try (hash(x) + 1) % S
 if (hash(x) + 1) % S is also full, then we try (hash(x) + 2) % S
@@ -330,15 +298,6 @@ if (hash(x) + 2) % S is also full, then we try (hash(x) + 3) % S
 > 
 
 ## deletion
-
-![Screenshot 2023-11-18 at 2.50.19 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-18_at_2.50.19_PM.png)
-
-![Screenshot 2023-11-18 at 2.50.25 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-18_at_2.50.25_PM.png)
-
-![Screenshot 2023-11-18 at 2.50.32 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-18_at_2.50.32_PM.png)
-
-![Screenshot 2023-11-18 at 2.50.38 PM.png](hashing%206d0615c66787459b98df831c3445889c/Screenshot_2023-11-18_at_2.50.38_PM.png)
-
 - deleting 4146, we replace 73 with 4435
 
 > **delete**: establish a tombstone to mark this position was occupied 
