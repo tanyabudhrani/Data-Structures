@@ -1,7 +1,5 @@
 # introduction
 
-Created time: August 29, 2023 8:35 PM
-
 - codes !!
     
     ```java
@@ -295,32 +293,11 @@ int find(int key) {
 }
 ```
 
-### basic control flow
-
-![Screenshot 2023-08-30 at 11.56.40 AM.png](introduction%208529f1edae814eb8a1ed2515f85f4f56/Screenshot_2023-08-30_at_11.56.40_AM.png)
-
-### subroutine call
-
-![Screenshot 2023-08-30 at 11.59.24 AM.png](introduction%208529f1edae814eb8a1ed2515f85f4f56/Screenshot_2023-08-30_at_11.59.24_AM.png)
-
 # bubble sort
 
 - works by repeatedly swapping the adjacent elements if they are in the wrong order
     - traverse from left and compare adjacent elements so the higher one is placed at the right side
     - in this way, the largest element is moved to the rightmost end at first
-    - passes
-        1. the largest element is placed at the end of the array 
-            
-            ![Screenshot 2023-08-30 at 12.02.10 PM.png](introduction%208529f1edae814eb8a1ed2515f85f4f56/Screenshot_2023-08-30_at_12.02.10_PM.png)
-            
-        2. the second largest element is placed in the correct position
-            
-            ![Screenshot 2023-08-30 at 12.02.16 PM.png](introduction%208529f1edae814eb8a1ed2515f85f4f56/Screenshot_2023-08-30_at_12.02.16_PM.png)
-            
-        3. the remaining elements are placed in their correct positions
-            
-            ![Screenshot 2023-08-30 at 12.02.23 PM.png](introduction%208529f1edae814eb8a1ed2515f85f4f56/Screenshot_2023-08-30_at_12.02.23_PM.png)
-            
 
 ```java
 static void bubbleSort(int arr[], int n) {
@@ -351,22 +328,9 @@ static void bubbleSort(int arr[], int n) {
 - works by repeatedly selecting the smallest element from the unsorted portion of the list and moving it to the sorted portion
     - passes
         1. for the first position in the sorted array, the whole array is traversed from the first index to the last sequentially— the minimum value is then placed at the very beginning 
-            
-            ![Screenshot 2023-08-30 at 1.30.30 PM.png](introduction%208529f1edae814eb8a1ed2515f85f4f56/Screenshot_2023-08-30_at_1.30.30_PM.png)
-            
         2. for the second position, the array is traversed in a sequential manner to find the second lowest value and swap it with the number in the second position
-            
-            ![Screenshot 2023-08-30 at 1.30.37 PM.png](introduction%208529f1edae814eb8a1ed2515f85f4f56/Screenshot_2023-08-30_at_1.30.37_PM.png)
-            
         3. for the third place, again the array is traversed to find the next minimum value and it is swapped with the number in third place 
-            
-            ![Screenshot 2023-08-30 at 1.30.44 PM.png](introduction%208529f1edae814eb8a1ed2515f85f4f56/Screenshot_2023-08-30_at_1.30.44_PM.png)
-            
         4. do the same step for the fourth and any remaining positions until the array is fully sorted
-            
-            ![Screenshot 2023-08-30 at 1.30.51 PM.png](introduction%208529f1edae814eb8a1ed2515f85f4f56/Screenshot_2023-08-30_at_1.30.51_PM.png)
-            
-    
 
 ```java
 void sort(int arr[]) {
@@ -430,10 +394,6 @@ void sort(int arr[]) {
             | 5 | 6 | 11 | 12 | 13 |
             | --- | --- | --- | --- | --- |
             - finally, the array is sorted
-        
-        ![insertionsort.png](introduction%208529f1edae814eb8a1ed2515f85f4f56/insertionsort.png)
-        
-    
 
 ```java
 public class insertionsort {
