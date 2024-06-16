@@ -1,13 +1,8 @@
 # linked lists
 
-Created time: September 29, 2023 7:32 AM
-
 # linked lists
 
 - we see linked lists in back buttons, web browsers, music queues
-
-![Screenshot 2023-09-20 at 1.41.27 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-20_at_1.41.27_PM.png)
-
 - separate blocks of storage (nodes) are linked together using reference/pointers where each node has two fields:
     - (1) a data component, and (2) a link that points to its succeeding node
     - head points to the first node, and its null if and only if the list is empty
@@ -16,11 +11,7 @@ Created time: September 29, 2023 7:32 AM
 ## inserting at the beginning
 
 - first, we create a new node with the data 75, then we make it the new head, and let its link point to the old head
-
-![Screenshot 2023-09-20 at 1.44.11 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-20_at_1.44.11_PM.png)
-
-![Screenshot 2023-09-20 at 1.44.32 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-20_at_1.44.32_PM.png)
-
+  
 ```java
 public void addFirst(int data) {
 	if(head == null) {
@@ -34,11 +25,6 @@ public void addFirst(int data) {
 ## inserting at the end
 
 - first, we create a new node with the data 38, then we find the tail and make it point to the new node and then make the new node point to null
-
-![Screenshot 2023-09-20 at 1.46.02 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-20_at_1.46.02_PM.png)
-
-![Screenshot 2023-09-20 at 1.46.17 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-20_at_1.46.17_PM.png)
-
 - what is the running time? what if the list was empty?
     - for inserting at the beginning, run time is O(1)
         - if the list was empty, insertion either at the front or the rear would be the same, with run time at O(1)
@@ -94,20 +80,12 @@ public void addLast(int data) {
 ## removing the first node
 
 - let head point to the next node and return the first element
-    
-    ![Screenshot 2023-09-20 at 1.50.32 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-20_at_1.50.32_PM.png)
-    
 - do we need to remove the link?
     - since we are already updating the head to point to the next node, there already is no link between the first two nodes— however, we can set its pointer to null to effectively disconnect it from the list
 
 ## removing the last element
 
 - find the last node of the list, let the link of its previous node point to null
-
-![Screenshot 2023-09-20 at 1.50.52 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-20_at_1.50.52_PM.png)
-
-![Screenshot 2023-09-20 at 1.51.02 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-20_at_1.51.02_PM.png)
-
 - what are the boundary cases if:
     - the list is empty — if the list is empty, we can return null since head should point to null
     - it only has one element — if there is only one element, we can delete that, then set head and tail to point to null
@@ -350,9 +328,6 @@ public void remove(int index) {
     }
     ```
     
-
-![Screenshot 2023-09-29 at 10.42.19 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-29_at_10.42.19_PM.png)
-
 - what is the complexity of reversing a linked list? — O(n)
     
     ```java
@@ -464,16 +439,6 @@ public void remove(int index) {
 
 # doubly linked lists
 
-## inserting at the front
-
-![Screenshot 2023-09-29 at 10.43.07 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-29_at_10.43.07_PM.png)
-
-![Screenshot 2023-09-29 at 10.43.43 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-29_at_10.43.43_PM.png)
-
-![Screenshot 2023-09-29 at 10.43.21 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-29_at_10.43.21_PM.png)
-
-![Screenshot 2023-09-29 at 10.43.52 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-29_at_10.43.52_PM.png)
-
 ```java
 public void insertfirst(int value) {
 	Node newNode = new Node(value);
@@ -490,15 +455,6 @@ public void insertfirst(int value) {
 ```
 
 ## deletion
-
-![Screenshot 2023-09-29 at 10.46.01 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-29_at_10.46.01_PM.png)
-
-![Screenshot 2023-09-29 at 10.46.29 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-29_at_10.46.29_PM.png)
-
-![Screenshot 2023-09-29 at 10.46.12 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-29_at_10.46.12_PM.png)
-
-![Screenshot 2023-09-29 at 10.46.38 PM.png](linked%20lists%20a83311d61a194154985da50cc7828d49/Screenshot_2023-09-29_at_10.46.38_PM.png)
-
 ```java
 public Node deletefirst() {
 	if(isEmpty()) {
