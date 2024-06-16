@@ -7,8 +7,6 @@ Created time: October 6, 2023 2:36 AM
 - sentinels are nodes specially designed that do not hold or refer to any data of the data structure
     - to make insertion and deletion simple, we just need to add one sentinel node at the beginning and end of the linked list— by doing so, we no longer need to keep separate pointers for the head and tail & we also do not have to worry about updating the head and tial pointers
 
-![Screenshot 2023-10-06 at 5.44.11 PM.png](recursion%202fb7cf81d41041b5b2958031d9ecebdd/Screenshot_2023-10-06_at_5.44.11_PM.png)
-
 ```java
 class Node {
     public int data;
@@ -82,9 +80,6 @@ class Sentinels {
 ```
 
 ### circular doubly linked lists
-
-![Screenshot 2023-10-06 at 5.45.30 PM.png](recursion%202fb7cf81d41041b5b2958031d9ecebdd/Screenshot_2023-10-06_at_5.45.30_PM.png)
-
 ```java
 public class CircularDLL {
 
@@ -303,12 +298,7 @@ static int recursiveGCD(int a, int b) {
 	} else {
 		return a;
 }
-```
-
-- alternative code
-    
-    ![Screenshot 2023-09-29 at 10.59.21 PM.png](recursion%202fb7cf81d41041b5b2958031d9ecebdd/Screenshot_2023-09-29_at_10.59.21_PM.png)
-    
+```   
 
 ## tower of hanoi
 
@@ -324,8 +314,6 @@ static int recursiveGCD(int a, int b) {
 - move the top n-1 disks from the left to center
 - move the largest disk from the left to the right
 - move the n-1 disk from the center to the right
-
-![Screenshot 2023-10-06 at 5.49.49 PM.png](recursion%202fb7cf81d41041b5b2958031d9ecebdd/Screenshot_2023-10-06_at_5.49.49_PM.png)
 
 ```java
 public class TowerOfHanoi {
@@ -589,12 +577,6 @@ class RecursivePeak {
     - compare the two maximum elements and return larger
     - base case: only one element
 
-![Screenshot 2023-10-06 at 6.11.59 PM.png](recursion%202fb7cf81d41041b5b2958031d9ecebdd/Screenshot_2023-10-06_at_6.11.59_PM.png)
-
-![Screenshot 2023-10-06 at 6.12.09 PM.png](recursion%202fb7cf81d41041b5b2958031d9ecebdd/Screenshot_2023-10-06_at_6.12.09_PM.png)
-
-![Screenshot 2023-10-06 at 6.12.32 PM.png](recursion%202fb7cf81d41041b5b2958031d9ecebdd/Screenshot_2023-10-06_at_6.12.32_PM.png)
-
 ```java
 public class RecursiveMax {
 	static int max(int[] a, int low, int high){
@@ -618,9 +600,6 @@ public class RecursiveMax {
 ```
 
 ### iterative implementation
-
-![Screenshot 2023-10-06 at 6.15.35 PM.png](recursion%202fb7cf81d41041b5b2958031d9ecebdd/Screenshot_2023-10-06_at_6.15.35_PM.png)
-
 ```java
 static int IterativeMax(int[] a) {
 		int n = a.length ;
@@ -644,9 +623,6 @@ static int IterativeMax(int[] a) {
 - we know how to find the maximum and how to find the minimum— now the question is how to find both
     - we can find the maximum first, then a minimum with how many comparisons?
         - this will take 2n-2 comparisons (n-1 for max, then n-1 for min)
-
-![Screenshot 2023-10-06 at 6.22.32 PM.png](recursion%202fb7cf81d41041b5b2958031d9ecebdd/Screenshot_2023-10-06_at_6.22.32_PM.png)
-
 - the operations at the lowest level are the same
     - there are two comparisons for two parts
         - compare the left max and right max
@@ -717,13 +693,7 @@ static int IterativeMax(int[] a) {
     If the array has a unique maximum element, then we return an element with the second largest value
     - 9, 6, 6: return 1 or 2, the index of one of the 6’s
 - although, we are only explicitly looking for a second largest, we have to find a largest and a second largest elements
-    
-    ![Screenshot 2023-10-06 at 6.55.10 PM.png](recursion%202fb7cf81d41041b5b2958031d9ecebdd/Screenshot_2023-10-06_at_6.55.10_PM.png)
-    
 - this problem can be solved using only n + logn comparisons ($n + logn = 2^3$$^0 + 30$ for $n = 2^3$$^0$)— we can achieve this by only calculating the maximum for each recursive step
-    
-    ![Screenshot 2023-10-06 at 6.56.59 PM.png](recursion%202fb7cf81d41041b5b2958031d9ecebdd/Screenshot_2023-10-06_at_6.56.59_PM.png)
-    
     - either the largest of the left or the second of the right: $n-1 + ⌈log n⌉ − 1 = n + ⌈log n⌉ − 2$
     
     ```java
