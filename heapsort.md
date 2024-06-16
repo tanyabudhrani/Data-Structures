@@ -1,7 +1,5 @@
 # heapsort
 
-Created time: November 11, 2023 1:17 AM
-
 # priority queues
 
 - a priority queue is an ADT that has insert and removeMax/removeMin, and can also support getMax/getMin and size as well
@@ -90,8 +88,6 @@ public class PQUsingLL {
         | minimum heap | the root node represents the node with the highest priority  |
         | binary search tree | accessing a BST using inorder will allow for ascending access  |
         | self-balancing BST | highest priority will always be at the root of the tree  |
-
-[Untitled Database](heapsort%207a335166f2d54a969fa0653e7066e555/Untitled%20Database%2062438af46237471a9cfc077edb077d30.csv)
 
 - priority queues ≠ heaps but priority queues are almost always implemented using a heap
 
@@ -186,15 +182,6 @@ void sortWithHeap (int [] keys , T[] data) {
 		data [i] = heap.removeMax();
 }
 ```
-
-### deleting max
-
-![Screenshot 2023-11-11 at 5.54.55 PM.png](heapsort%207a335166f2d54a969fa0653e7066e555/Screenshot_2023-11-11_at_5.54.55_PM.png)
-
-![Screenshot 2023-11-11 at 5.55.16 PM.png](heapsort%207a335166f2d54a969fa0653e7066e555/Screenshot_2023-11-11_at_5.55.16_PM.png)
-
-![Screenshot 2023-11-11 at 5.55.41 PM.png](heapsort%207a335166f2d54a969fa0653e7066e555/Screenshot_2023-11-11_at_5.55.41_PM.png)
-
 ## heapsort code
 
 ```java
@@ -261,14 +248,7 @@ public class HeapSort {
 }
 ```
 
-### heapify
-
-![Screenshot 2023-11-11 at 5.57.35 PM.png](heapsort%207a335166f2d54a969fa0653e7066e555/Screenshot_2023-11-11_at_5.57.35_PM.png)
-
 ### removeMax
-
-![Screenshot 2023-11-11 at 5.57.39 PM.png](heapsort%207a335166f2d54a969fa0653e7066e555/Screenshot_2023-11-11_at_5.57.39_PM.png)
-
 - heapify can be done in O(n) time
 - it’s not hard to get an upper bound (O) of the complexity of an algorithm, but it is nontrivial to get a tight one (Θ)
 
@@ -276,14 +256,6 @@ public class HeapSort {
 - how about a sorted array, a reversely sorted array (with distinct keys)?
     - sorted array represents the worst case as the smallest value would be at the root
     - reversely sorted array would also be worst case since the reduced heap would result in the max value getting placed at the end
-
-## selection sort
-
-![Screenshot 2023-11-11 at 6.02.20 PM.png](heapsort%207a335166f2d54a969fa0653e7066e555/Screenshot_2023-11-11_at_6.02.20_PM.png)
-
-![Screenshot 2023-11-11 at 6.02.27 PM.png](heapsort%207a335166f2d54a969fa0653e7066e555/Screenshot_2023-11-11_at_6.02.27_PM.png)
-
-![Screenshot 2023-11-11 at 6.02.36 PM.png](heapsort%207a335166f2d54a969fa0653e7066e555/Screenshot_2023-11-11_at_6.02.36_PM.png)
 
 ### is heapsort stable?
 
@@ -318,13 +290,3 @@ public class HeapSort {
             - [65, 85, 17, 88, 66] →[65, 85, 17, 88, 66, 71] →[65, 85, 17, 66, 71, 45]— 45 replaces 85
             - [65, 85, 17, 88, 66] →[65, 85, 17, 88, 66, 71] →[65, 85, 17, 66, 71, 45] → …→ [17, 45, 38, 48, 18, 85]
         - now, we need removeMin
-
-![Screenshot 2023-11-11 at 6.09.44 PM.png](heapsort%207a335166f2d54a969fa0653e7066e555/Screenshot_2023-11-11_at_6.09.44_PM.png)
-
-![Screenshot 2023-11-11 at 6.09.51 PM.png](heapsort%207a335166f2d54a969fa0653e7066e555/Screenshot_2023-11-11_at_6.09.51_PM.png)
-
-![Screenshot 2023-11-11 at 6.09.57 PM.png](heapsort%207a335166f2d54a969fa0653e7066e555/Screenshot_2023-11-11_at_6.09.57_PM.png)
-
-![Screenshot 2023-11-11 at 6.10.03 PM.png](heapsort%207a335166f2d54a969fa0653e7066e555/Screenshot_2023-11-11_at_6.10.03_PM.png)
-
-![Screenshot 2023-11-11 at 6.10.52 PM.png](heapsort%207a335166f2d54a969fa0653e7066e555/Screenshot_2023-11-11_at_6.10.52_PM.png)
