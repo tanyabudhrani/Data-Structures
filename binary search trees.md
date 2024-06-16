@@ -1,7 +1,5 @@
 # binary search trees
 
-Created time: October 30, 2023 1:30 AM
-
 > trees are reference-based and behave similarly to linked lists— although trees are more complicated, we almost always work on a list starting from the root to conduct an operation
 > 
 
@@ -94,8 +92,6 @@ void sortGrades(Student[] a) {
     - and every element in the right is larger than p
 - p itself can be the first, last, or middle element
 
-![Screenshot 2023-10-30 at 5.10.52 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_5.10.52_PM.png)
-
 ## recursive quicksort
 
 ```java
@@ -148,9 +144,7 @@ l-2 is used to exclude the last element placed in the left subarray
     - the work of each partition is proportional to the number of elements under concern, so each level uses O(n) time
     - the running time of the whole algorithm depends on #levels (iterations) which depends on whether the partitions are balanced, which depends on the pivot values chosen in each step
 - so, if we always choose the last element as pivot, the worst case is a **sorted array**— this is because since quicksort always chooses the last element, when the array is already sorted, the pivot will always be the largest element— so as a result, the subarrays will be unbalanced since the other subarray is literally empty and this is inefficient because the partitioning step only reduces the problem size by one element per recursive call
-    
-    ![Screenshot 2023-10-30 at 6.12.06 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_6.12.06_PM.png)
-    
+ 
 - the worst cases: **n → n-1 → n-2 → n-3 → … → 1**
 
 > in the worst case, quicksort takes o($n^2$) time | in the best case, it takes o(n(log(n)) time
@@ -262,21 +256,8 @@ public class QuickSort {
     - **mergesort**: left half (⌊n+1/2⌋) and right half (⌊n/2⌋)
 - for iterative implementation: bottom-up
 
-### execution of quicksort
-
-![Screenshot 2023-10-30 at 8.05.35 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_8.05.35_PM.png)
-
-# binary tree
-
-![Screenshot 2023-10-30 at 8.08.36 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_8.08.36_PM.png)
-
-- this is a binary tree of height 3 where 4 of the 9 nodes are leaves
-    - we can add 3 more nodes to G, 2 more nodes to A, 1 more node to I
-    - we can remove A,B,C,D,E and still have a binary tree of height 3
 
 ### terminologies
-
- 
 
 | path  | a sequence of edges, each starting with the node of the previous edge ends  |
 | --- | --- |
@@ -379,16 +360,6 @@ class BinaryTree {
 }
 ```
 
-![Screenshot 2023-10-30 at 8.59.35 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_8.59.35_PM.png)
-
-# binary tree traversals
-
-- tree traversals is the process of visiting each node in a tree data structure, exactly once, in a systematic way
-
-![Screenshot 2023-10-30 at 9.04.05 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_9.04.05_PM.png)
-
-![Screenshot 2023-10-30 at 9.22.04 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_9.22.04_PM.png)
-
 ### traversals
 
 ```java
@@ -466,10 +437,6 @@ public class TreeTraversals {
 
 ## level-wise traversal
 
- 
-
-![Screenshot 2023-10-30 at 9.47.35 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_9.47.35_PM.png)
-
 ```java
 import java.util.LinkedList;
 import java.util.Queue;
@@ -530,9 +497,6 @@ public class LevelWise {
 ```
 
 - two different trees can have the same inorder sequence
-    
-    ![Screenshot 2023-10-30 at 10.03.57 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_10.03.57_PM.png)
-    
 
 - how do we uniquely build the tree?
     - Inorder traversal: □□□X■■■■■
@@ -549,17 +513,10 @@ public class LevelWise {
     - larger than nodes in its left subtree, and
     - smaller than nodes in its right subtree
 - example
-    
-    ![Screenshot 2023-10-30 at 10.10.26 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_10.10.26_PM.png)
-    
     - 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10 → 11 → 12 → 13 → 14
-
-![Screenshot 2023-10-30 at 10.12.20 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_10.12.20_PM.png)
 
 - the running time of search is O(d), where d is the **depth/height** of the tree, but the worst case is d = n-1, when the tree is skewed
 - binary trees with depth O(log (n)) are considered balanced— there is balance between the number of nodes in the left subtree and the number of nodes in the right subtree of each node
-
-![Screenshot 2023-10-30 at 10.19.44 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_10.19.44_PM.png)
 
 ```java
 BinarySearchTree < Student > tree = new BinarySearchTree < Student >();
@@ -573,8 +530,6 @@ for (int i = 0; i < 11; i ++) {
 	tree.insert (ids[i], new Student(ids[i], names[i]));
 ```
 
-![Screenshot 2023-10-30 at 10.28.00 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_10.28.00_PM.png)
-
 - any order in which no node is earlier than its parent
 
 ## successor in BST
@@ -582,8 +537,6 @@ for (int i = 0; i < 11; i ++) {
 - the **successor** of a node is the node whose key immediately follow it
 
 - the **predecessor** of a node is the node whose key immediately precedes it
-
-![Screenshot 2023-10-30 at 10.37.07 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_10.37.07_PM.png)
 
 - if x has a right child, the minimum node of its right subtree— otherwise, on the path from the root to x, the first node on which we turn left
 
@@ -603,9 +556,6 @@ for (int i = 0; i < 11; i ++) {
 ## deleting a node
 
 - to delete a leaf, set the link from its parent to it to be null— simply removing a non-leaf breaks the tree
-
-![Screenshot 2023-10-30 at 10.58.13 PM.png](binary%20search%20trees%20f0fccff6cdd946de83429106d63de3ae/Screenshot_2023-10-30_at_10.58.13_PM.png)
-
 - to delete a node x with one child y, set the link from x’s parent to x to y
 
 | x has no children | set the child field in its parent to null  |
