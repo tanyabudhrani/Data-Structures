@@ -1,7 +1,5 @@
 # recursion
 
-Created time: October 6, 2023 2:36 AM
-
 ### using sentinels (dummy nodes)
 
 - sentinels are nodes specially designed that do not hold or refer to any data of the data structure
