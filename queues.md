@@ -1,6 +1,5 @@
 # queues
 
-Created time: September 19, 2023 9:55 PM
 
 - review question
     - what is the meaning of == applied to primitive types and objects?
@@ -8,11 +7,6 @@ Created time: September 19, 2023 9:55 PM
         - object: checks whether two objects have the **same memory addresses**
 - exercises on stacks
     1. suppose that integers 0 through 9 are pushed into an originally empty stack in order— there are ten successful pop operations where the pop value is printed out— which sequence cannot be the output?
-        
-        ![Screenshot 2023-09-20 at 1.26.53 PM.png](queues%204ba00741ab0642a687b9a69ca14b8baa/Screenshot_2023-09-20_at_1.26.53_PM.png)
-        
-        ![IMG_5299.png](queues%204ba00741ab0642a687b9a69ca14b8baa/IMG_5299.png)
-        
     2. what is the running time of push and pop?
         - both are constant, therefore their runtime is **O(1)**
     3. suppose that P,O,L,Y,U are pushed onto an originally empty stack in order and there are 4 successful pop operations— in the end, there is one letter remaining in the stack, which letter is it? 
@@ -29,12 +23,6 @@ Created time: September 19, 2023 9:55 PM
     | isEmpty() | tests if the queue is empty |
     | peek() | looks at the object in the front |
 - implemented using first-in first-out
-
-![Screenshot 2023-09-20 at 1.31.56 PM.png](queues%204ba00741ab0642a687b9a69ca14b8baa/Screenshot_2023-09-20_at_1.31.56_PM.png)
-
-### implemented using a circular array
-
-![Screenshot 2023-09-20 at 1.33.17 PM.png](queues%204ba00741ab0642a687b9a69ca14b8baa/Screenshot_2023-09-20_at_1.33.17_PM.png)
 
 ## indices
 
